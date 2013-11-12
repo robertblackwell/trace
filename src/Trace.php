@@ -1,6 +1,6 @@
 <?php
 /*!
-** Trace class for debug print outs.
+** Trace class for debug print outs. Hello
 **
 ** Can be enabled globally so that all calls to Trace:: generates output 
 ** Can be disabled globally so that no Trace printouts occur
