@@ -13,5 +13,6 @@
     }
 }
 {
-    "name":"robblackwell/trace"
+    "name":"robblackwell/trace",
+    "version":"1.0.0"
 }
