@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(dirname(dirname(__FILE__)))."/include/header.php");
+require_once(dirname(__FILE__)."/header.php");
 
 Trace::off();
 Trace::on(array("class"=>"test_one", "function"=>"test_1"));
