@@ -1,17 +1,4 @@
-{
-    "name": "robblackwell/trace",
-    "description": "This is a simple debugging trace library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Robert Blackwell",
-            "email": "rob@whiteacorn.com"
-        }
-    ],
-    "require": {
 
-    }
-}
 {
     "name":"robblackwell/trace",
 }
