@@ -1,6 +1,6 @@
 
 {
-    "name":"robblackwell/trace",
+    "name":"robertblackwell/trace",
     "description": "A simple tracing library with easy on/off",
     "keywords": ["trace", "php", "debug"],
     "type": "library",
