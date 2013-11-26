@@ -29,13 +29,26 @@ class Trace{
                 ($caller_class == 'Trace') && (in_array($caller_function, $valid_caller_functions))  
                 )
             ) throw new \Exception(__METHOD__." called from wrong/invalid place caller is $caller_class::$caller_function"); 
+//        var_dump($di[2]);exit();
         $obj = new stdClass();
         $obj->file = $di[1]['file'];
         $obj->line_number = $di[1]['line'];
         $obj->function = $di[2]['function'];
         $obj->class = (array_key_exists('class', $di[2]))? $di[2]['class'] : "*";
         $obj->type = (array_key_exists('type', $di[2]))? $di[2]['type'] : "";
-        $obj->args = (array_key_exists('args', $di[2]))? implode(',', $di[2]['args']) : "";
+        if( array_key_exists('args', $di[2]) ){
+            $obj->args = "";
+            foreach($di[2]['args'] as $args){
+                if(is_array($args) ) 
+                    $a = print_r($args, true);
+                else if(is_object($args) ) 
+                    $a = "Object of class:[".get_class($args)."]" ;//var_export($args, true);
+                else 
+                    $a = $args."";
+                $obj->args .= $a.", ";
+            }    
+        }
+//        $obj->args = (array_key_exists('args', $di[2]))? implode(',', $di[2]['args']) : "";
         $obj->backtrace = $di;        
         $obj->string = $obj->class.$obj->type.$obj->function;//."[". $file."::".$line_number."]";
         return $obj;
