@@ -13,7 +13,7 @@
         }
     ],
     "require-dev":{
-        "simpletest/simpletest":"dev-master"
+		    "phpunit/phpunit": "4.1.*"
     },
 
     "autoload": {

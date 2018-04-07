@@ -1,0 +1,9 @@
+    <testsuites>
+        <testsuite name="My Test">
+			<file>Args.php</file>
+			<file>TestExplicitClass.php</file>
+			<file>TestExplicitMethod.php</file>
+			<file>NonClassFunction1Test.php</file>
+			<file>NonClassFunction2Test.php</file>
+        </testsuite>
+    </testsuites>
