@@ -31,11 +31,11 @@ class Trace
         self::$trace_file  = $t_file;
     }
 
-    private function _print($text)
+    private static function _print($text)
     {
         fwrite(self::$trace_file, $text);
     }
-    private function _prinit_r($mixed)
+    private static function _prinit_r($mixed)
     {
         $s = print_r($mixed, true);
         self::_print($s);
