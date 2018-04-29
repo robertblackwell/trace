@@ -9,6 +9,7 @@ function non_class_function2($one, $two){
 class TestImpliedConstructor extends  PHPUnit_Framework_TestCase{
     function __construct(){
         //Trace::reset();
+		Trace::set_file(mk_trace_file(__FILE__));
         Trace::off('*', 'non_class_function2');
         Trace::on(__CLASS__,__FUNCTION__);
         parent::__construct();

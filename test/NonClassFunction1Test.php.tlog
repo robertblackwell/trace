@@ -1,0 +1,10 @@
+TestExplicitFunctionX_File->test52(  ) Entered []
+*non_class_function( 111, 222,  ) Entered []
+*non_class_function Debug a debug message one:111 two:222
+*non_class_function Exited []
+TestExplicitFunctionX_File->test52 Exited []
+TestImpliedConstructor->something62(  ) Entered []
+*non_class_function2( 111, 222,  ) Entered []
+*non_class_function2 Debug a debug message one:111 two:222
+*non_class_function2 Exited []
+TestImpliedConstructor->something62 Exited []

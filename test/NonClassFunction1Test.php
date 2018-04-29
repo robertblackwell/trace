@@ -17,5 +17,18 @@ class TestExplicitFunctionX extends  PHPUnit_Framework_TestCase{
 	}
 }
 
+class TestExplicitFunctionX_File extends  PHPUnit_Framework_TestCase{
+	function setUp()
+	{
+		Trace::set_file(mk_trace_file(__FILE__));
+		Trace::on("*",'non_class_function');
+	}
+	function test52()
+	{
+	    Trace::function_entry();
+	    non_class_function('111','222');
+	    Trace::function_exit();
+	}
+}
 
 ?>

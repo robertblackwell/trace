@@ -7,12 +7,39 @@
 ** Can be enabled for a particular class or class/function combination
 **
 */
-class Trace{
+class Trace
+{
 
+    static $trace_file = STDOUT;
     static $enabled = true;
     static $disabled = false; 
     static $list = array();
-      
+    
+    public static function set_file($file_path = null)
+    {
+        if( is_null($file_path)) {
+            $t_file = STDOUT;
+        } else {
+            $t_file = fopen($file_path, "w");
+            if (is_null($t_file)) {
+                throw new \Exception("tracefile $file_path could not be openned");
+            }
+        }
+        if( is_null($t_file)) {
+            throw new \Exception("trace file is null");
+        }
+        self::$trace_file  = $t_file;
+    }
+
+    private function _print($text)
+    {
+        fwrite(self::$trace_file, $text);
+    }
+    private function _prinit_r($mixed)
+    {
+        $s = print_r($mixed, true);
+        self::_print($s);
+    }
     /*!
     ** Collects the debug call stack information so we can work out who called a Trace function.
     ** It is essential that this function be called ONLY by one of
@@ -163,36 +190,36 @@ class Trace{
     ** Dumps the class variables for testing and debugging
     */
     public static function dump(){
-        print "enabled : ". (int)self::$enabled ."\n";
-        print "disabled : ". (int)self::$disabled ."\n";
-        print_r(self::$list);
+        self::_print("enabled : ". (int)self::$enabled ."\n");
+        self::_print("disabled : ". (int)self::$disabled ."\n");
+        self::print_r(self::$list);
     }
     
     public static function function_entry($message=""){
         $o = self::debug_info();
         $a_str = $o->args;
         if( self::permitted($o->class, $o->function) )
-            print $o->class.$o->type.$o->function."( ".$a_str." ) Entered [".$message."]\n";
+            self::_print($o->class.$o->type.$o->function."( ".$a_str." ) Entered [".$message."]\n");
     }
     public static function function_exit($message=""){
         $o = self::debug_info();
         if( self::permitted($o->class, $o->function) )
-            print $o->string." Exited [".$message."]\n";
+            self::_print( $o->string." Exited [".$message."]\n");
     }
     public static function alert($message){
         $o = self::debug_info();
         if( self::permitted($o->class, $o->function) )
-            print $o->string." Alert ".$message."\n";
+            self::_print( $o->string." Alert ".$message."\n");
     }
     public static function debug($message){
         $o = self::debug_info();
         if( self::permitted($o->class, $o->function) )
-            print $o->string." Debug ".$message."\n";
+            self::_print( $o->string." Debug ".$message."\n");
     }
     public static function error($message){
         $o = self::debug_info();
         if( self::permitted($o->class, $o->function) )
-            print $o->string." Error ".$message."\n";
+            self::_print( $o->string." Error ".$message."\n");
     }
 }
 ?>
