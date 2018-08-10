@@ -10,7 +10,7 @@
 class Trace
 {
 
-    static $trace_file = STDOUT;
+    static $trace_file;// = STDOUT;
     static $enabled = true;
     static $disabled = false; 
     static $list = array();
@@ -18,7 +18,7 @@ class Trace
     public static function set_file($file_path = null)
     {
         if( is_null($file_path)) {
-            $t_file = STDOUT;
+            $t_file = fopen('php://stdout', 'w');;
         } else {
             $t_file = fopen($file_path, "w");
             if (is_null($t_file)) {
