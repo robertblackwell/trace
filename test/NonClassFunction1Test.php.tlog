@@ -8,3 +8,17 @@ TestImpliedConstructor->something62(  ) Entered []
 *non_class_function2 Debug a debug message one:111 two:222
 *non_class_function2 Exited []
 TestImpliedConstructor->something62 Exited []
+TestOne->test_1(  ) Entered []
+TestOne->test_1 Debug debug from test_1
+TestOne->test_1 Exited []
+TestOne::st( thisis the parameter,  ) Entered []
+TestOne::st Debug Tried to manipulate the variable a:thevariale
+TestOne::st Exited []
+TestOne->test_3(  ) Entered []
+TestOneTwo->test_1(  ) Entered []
+TestOneTwo->test_1 Debug debug from test_1
+TestOneTwo->test_1 Exited []
+TestOneTwo::st( thisis the parameter,  ) Entered []
+TestOneTwo::st Debug Tried to manipulate the variable a:thevariale
+TestOneTwo::st Exited []
+TestOneTwo->test_3(  ) Entered []

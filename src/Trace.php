@@ -192,7 +192,7 @@ class Trace
     public static function dump(){
         self::_print("enabled : ". (int)self::$enabled ."\n");
         self::_print("disabled : ". (int)self::$disabled ."\n");
-        self::print_r(self::$list);
+        self::_print_r(self::$list);
     }
     
     public static function function_entry($message=""){

@@ -1,33 +1,3 @@
-ArgsTests->pass_int( 33,  ) Entered []
-ArgsTests->pass_string( thisisastring,  ) Entered []
-ArgsTests->pass_array( Array
-(
-    [0] => 33
-    [1] => a string
-    [key] => value
-)
-,  ) Entered []
-ArgsTests->pass_object( Object of class:[stdClass],  ) Entered []
-ArgsTests->pass_object( Object of class:[ArgsTests],  ) Entered []
-ArgsTests->pass_many( 33, thisisastring, Array
-(
-    [0] => 33
-    [1] => a string
-    [key] => value
-)
-, Object of class:[ArgsTests],  ) Entered []
-TestClassExplicit->testOneOne(  ) Entered [the first one]
-TestClassExplicit->testOneOne Debug a debug message
-TestClassExplicit->testOneOne Exited [the second one]
-TestClassExplicit->test12(  ) Entered [the first one]
-TestClassExplicit->test12 Debug a debug message
-TestClassExplicit->test12 Exited [the second one]
-TestExplicitMethod->testOne(  ) Entered [the first one]
-TestExplicitMethod->testOne Debug a debug message
-TestExplicitMethod->testOne Exited [the second one]
-TestExplicitMethod->testTwo(  ) Entered [the first one]
-TestExplicitMethod->testTwo Debug a debug message
-TestExplicitMethod->testTwo Exited [the second one]
 TestExplicitFunctionX->test52(  ) Entered []
 *non_class_function( 111, 222,  ) Entered []
 *non_class_function Debug a debug message one:111 two:222
