@@ -33,6 +33,9 @@ class Trace
 
     private static function _print($text)
     {
+        if (is_null(self::$trace_file)) {
+            self::$trace_file = fopen("php://stdout", "w+");
+        }
         fwrite(self::$trace_file, $text);
     }
     private static function _prinit_r($mixed)
